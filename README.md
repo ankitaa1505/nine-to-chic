@@ -1,4 +1,3 @@
-<img width="2822" height="2870" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/ccfc85a6-5367-4e99-a1bd-e2ba09b1f86c" /># Nine To Chic 👗
 
 ### Dress Smart. Lead Boldly.
 
@@ -115,67 +114,7 @@ The long-term vision is to extend the shopping experience with personalized reco
 ## 🏗️ Application Architecture
 
 Nine To Chic follows a client-server architecture.
-
-flowchart TB
-    U(["Customer"])
-
-    subgraph FE["Presentation Layer — React + Vite"]
-        UI["User Interface"]
-        HOME["Home & Product Categories"]
-        DETAIL["Product Details"]
-        AUTH["Login & Signup"]
-        CART["Shopping Cart & Wishlist"]
-        CHECKOUT["Checkout & Order Confirmation"]
-    end
-
-    subgraph API["Backend Layer — Java + Spring Boot"]
-        CTRL["REST Controllers"]
-        US["User Service"]
-        PS["Product Service"]
-        CS["Cart Service"]
-        OS["Order Service"]
-        SEC["CORS Configuration"]
-    end
-
-    subgraph DATA["Persistence Layer"]
-        JPA["Spring Data JPA / Hibernate"]
-        DB[("MySQL Database")]
-    end
-
-    U --> UI
-    UI --> HOME
-    UI --> DETAIL
-    UI --> AUTH
-    UI --> CART
-    UI --> CHECKOUT
-
-    HOME -->|"HTTP / JSON"| SEC
-    DETAIL -->|"HTTP / JSON"| SEC
-    AUTH -->|"HTTP / JSON"| SEC
-    CART -->|"HTTP / JSON"| SEC
-    CHECKOUT -->|"HTTP / JSON"| SEC
-
-    SEC --> CTRL
-    CTRL --> US
-    CTRL --> PS
-    CTRL --> CS
-    CTRL --> OS
-
-    US --> JPA
-    PS --> JPA
-    CS --> JPA
-    OS --> JPA
-    JPA <--> DB
-
-    DB -.->|"Data responses"| JPA
-    JPA -.-> US
-    JPA -.-> PS
-    JPA -.-> CS
-    JPA -.-> OS
-    CTRL -.->|"JSON responses"| UI
-
-
-
+<img width="2822" height="2870" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/ccfc85a6-5367-4e99-a1bd-e2ba09b1f86c" /># Nine To Chic 👗
 
 
 ### Request Flow
